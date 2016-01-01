@@ -210,8 +210,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 bindsym XF86TouchpadToggle exec /home/neelo/.toggle_touchpad.sh # toggle touchpad
 
 # Media player controls
-bindsym XF86AudioPlay exec mpc play
-bindsym XF86AudioPause exec mpc pause
+bindsym XF86AudioPlay exec mpc toggle
 bindsym XF86AudioStop exec mpc stop
 bindsym XF86AudioNext exec mpc next
 bindsym XF86AudioPrev exec mpc prev
