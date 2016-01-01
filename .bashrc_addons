@@ -1,0 +1,21 @@
+# Enable __git_ps1 changed state
+
+export GIT_PS1_SHOWDIRTYSTATE=1
+
+# Make PS1 awesome
+
+PS1="[\[\033[38;5;1m\]\t\[\033[38;5;15m\]] \[\033[38;5;2m\]\u\[\033[38;5;15m\]@\[\033[38;5;10m\]\h\[\033[38;5;15m\]:\[\033[38;5;11m\]\W\[\033[38;5;15m\]\[\033[38;5;1m\]\$(__git_ps1)\[\033[38;5;15m\]\$ "
+
+# Set title to user@host:dir
+
+case "$TERM" in
+xterm*|rxvt*)
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    ;;
+*)
+    ;;
+esac
+
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
