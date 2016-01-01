@@ -127,6 +127,7 @@ endfunction
 
 set clipboard=unnamedplus
 set backupdir=~/.vim-backup,/tmp
+set undodir=~/.vim-backup,/tmp
 set directory=~/.vim-backup,/tmp
 
 set statusline+=%#warningmsg#
