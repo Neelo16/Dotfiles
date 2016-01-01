@@ -2,7 +2,7 @@
 
 SHUFFLE=YES
 WALLPAPERDIR="$HOME/Pictures/Wallpapers"
-DELAY=300
+DELAY=60
 
 trap ':' USR1 # Send a SIGUSR1 to this process to skip to the next wallpaper
 trap 'break' USR2 # Send a SIGUSR2 to this process to reload the wallpapers
