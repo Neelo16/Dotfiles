@@ -1,5 +1,6 @@
 URxvt*depth: 32
 URxvt*colorBD:          #ffffff
+URxvt*scrollBar: false
 URxvt*scrollTtyOutput: false
 URxvt*skipScroll: true
 URxvt*fading: 30
