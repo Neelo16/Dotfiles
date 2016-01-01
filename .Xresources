@@ -19,42 +19,40 @@ URxvt*keysym.Shift-Control-V: perl:clipboard:paste
 URxvt*clipboard.copycmd: xsel -ib
 URxvt*clipboard.pastecmd: xsel -ob
 
-URxvt.inputMethod: ibus 
-URxvt.preeditType: OverTheSpot
-
 ! special
-URxvt*foreground:   #f8f8f2
+*foreground:   #f8f8f2
+*background:   #272822
 URxvt*background:   [80]#272822
-URxvt*cursorColor:  #f8f8f2
+*cursorColor:  #f8f8f2
 !
 ! ! black
-URxvt*color0:       #272822
-URxvt*color8:       #75715e
+*color0:       #272822
+*color8:       #75715e
 !
 ! ! red
-URxvt*color1:       #f92672
-URxvt*color9:       #f92672
+*color1:       #f92672
+*color9:       #f92672
 !
 ! ! green
-URxvt*color2:       #a6e22e
-URxvt*color10:      #a6e22e
+*color2:       #a6e22e
+*color10:      #a6e22e
 !
 ! ! yellow
-URxvt*color3:       #f4bf75
-URxvt*color11:      #f4bf75
+*color3:       #f4bf75
+*color11:      #f4bf75
 !
 ! ! blue
-URxvt*color4:       #66d9ef
-URxvt*color12:      #66d9ef
+*color4:       #66d9ef
+*color12:      #66d9ef
 !
 ! ! magenta
-URxvt*color5:       #ae81ff
-URxvt*color13:      #ae81ff
+*color5:       #ae81ff
+*color13:      #ae81ff
 !
 ! ! cyan
-URxvt*color6:       #a1efe4
-URxvt*color14:      #a1efe4
+*color6:       #a1efe4
+*color14:      #a1efe4
 !
 ! ! white
-URxvt*color7:       #f8f8f2
-URxvt*color15:      #f9f8f5
+*color7:       #f8f8f2
+*color15:      #f9f8f5
