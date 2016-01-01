@@ -1,10 +1,23 @@
+if ! type __git_ps1 &> /dev/null; then
+	GIT_PROMPT_FILE="/usr/share/git/completion/git-prompt.sh"	
+	if [[ -f "$GIT_PROMPT_FILE" ]]; then
+		source "$GIT_PROMPT_FILE"
+	fi
+fi
+
 # Enable __git_ps1 changed state
 
 export GIT_PS1_SHOWDIRTYSTATE=1
 
 # Make PS1 awesome
 
-PS1="[\[\033[38;5;1m\]\t\[\033[38;5;15m\]] \[\033[38;5;2m\]\u\[\033[38;5;15m\]@\[\033[38;5;10m\]\h\[\033[38;5;15m\]:\[\033[38;5;11m\]\W\[\033[38;5;15m\]\[\033[38;5;1m\]\$(__git_ps1)\[\033[38;5;15m\]\$ "
+if type __git_ps1 &> /dev/null; then
+	GITPS1='__git_ps1'
+else
+	GITPS1=:
+fi
+
+PS1="[\[\033[38;5;1m\]\t\[\033[38;5;15m\]] \[\033[38;5;2m\]\u\[\033[38;5;15m\]@\[\033[38;5;10m\]\h\[\033[38;5;15m\]:\[\033[38;5;11m\]\W\[\033[38;5;15m\]\[\033[38;5;1m\]\$(${GITPS1})\[\033[38;5;15m\]\$ "
 
 # Set title to user@host:dir
 
