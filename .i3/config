@@ -259,5 +259,8 @@ bindsym shift+Print exec shutter -s
 
 bindsym $mod+ctrl+space exec --no-startup-id ~/.i3/change_kb.sh
 
+# Skip to the next wallpaper
+bindsym --release $mod+shift+n exec pkill -SIGUSR1 wallpaper_cycle
+
 # Get rid of the title bar
 new_window pixel
