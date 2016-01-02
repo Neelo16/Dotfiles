@@ -259,9 +259,5 @@ bindsym shift+Print exec shutter -s
 
 bindsym $mod+ctrl+space exec --no-startup-id ~/.i3/change_kb.sh
 
-# Replace useless Pause Break key with Zenkaku_Hankaku
-
-exec xmodmap -e 'keycode 127 = Zenkaku_Hankaku'
-
 # Get rid of the title bar
 new_window pixel
