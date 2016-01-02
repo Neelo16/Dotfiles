@@ -122,6 +122,6 @@ fi
 
 # Replace useless Pause Break key with Zenkaku_Hankaku
 
-exec xmodmap -e 'keycode 127 = Zenkaku_Hankaku'
+xmodmap -e 'keycode 127 = Zenkaku_Hankaku'
 
 
