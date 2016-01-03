@@ -215,21 +215,22 @@ bindsym XF86AudioStop exec mpc stop
 bindsym XF86AudioNext exec mpc next
 bindsym XF86AudioPrev exec mpc prev
 
-exec --no-startup-id unity-settings-daemon
 exec --no-startup-id ~/.i3/wallpaper_cycler.sh
 exec --no-startup-id nm-applet
 exec --no-startup-id dropbox start
 exec --no-startup-id urxvtd --quiet --fork --opendisplay
 exec --no-startup-id compton
 
-exec redshift-gtk
-exec shutter --min_at_startup
-exec copyq
-exec trackma-gtk
-exec guake
-exec mpd
-exec mpdscribble
-exec RinDownloader
+exec --no-startup-id setxkbmap pt
+exec --no-startup-id redshift-gtk
+exec --no-startup-id exec unclutter --fork
+exec --no-startup-id shutter --min_at_startup
+exec --no-startup-id copyq
+exec --no-startup-id trackma-gtk
+exec --no-startup-id guake
+exec --no-startup-id mpd
+exec --no-startup-id mpdscribble
+exec --no-startup-id RinDownloader
 
 bindsym $mod+d exec rofi -show run -lines 8 -eh 2 -width 100 -padding 100 -opacity "80" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
 bindsym $mod+ctrl+l exec /home/neelo/.i3/lock.sh
