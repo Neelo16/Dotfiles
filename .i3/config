@@ -128,7 +128,7 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 
 # assign windows to their workspaces
 assign [class="Firefox"] $workspace2
-assign [class="Sublime_text"] $workspace3
+assign [class="Subl"] $workspace3
 assign [class="mpv"] $workspace4
 assign [class="Steam"] $workspace5
 assign [class="Skype"] $workspace6
