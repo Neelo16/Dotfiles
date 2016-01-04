@@ -59,3 +59,9 @@ xmodmap -e 'keycode 127 = Zenkaku_Hankaku'
 
 export VISUAL=vim
 export EDITOR=$VISUAL
+
+# Fix the home, end, ctrl+right and ctrl+left keys
+bindkey ';5D' emacs-backward-word
+bindkey ';5C' emacs-forward-word
+
+source ~/.fix_zsh_keys
