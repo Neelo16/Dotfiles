@@ -31,7 +31,7 @@ function link_dir {
 }
 
 # Excludes the .git, README.md and current directories
-find -maxdepth 1 ! -name ".git" ! -name "." ! -name "README.md" | while read FILE
+find -maxdepth 1 ! -name ".git" ! -name "." ! -name "README.md" ! -name "link_files.sh" | while read FILE
 do
 	link_file "$FILE" .
 done
