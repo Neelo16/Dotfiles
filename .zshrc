@@ -49,6 +49,10 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+if [ -d $HOME/bin ]; then
+	export PATH=$HOME/bin:$PATH
+fi
+
 # Replace useless Pause Break key with Zenkaku_Hankaku
 
 xmodmap -e 'keycode 127 = Zenkaku_Hankaku'
