@@ -22,19 +22,21 @@ compinit
 HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=10000
-setopt appendhistory beep nomatch notify correct
+setopt appendhistory beep nomatch notify correct promptsubst
 unsetopt autocd extendedglob
 bindkey -e
 # End of lines configured by zsh-newuser-install
-PROMPT="[%F{red}%*%f] %F{green}%n%f@%F{green}%M%f:%F{yellow}%1~%f$ "
 
-alias ls='ls --color=auto'
-#alias dir='dir --color=auto'
-#alias vdir='vdir --color=auto'
+if [ -x /usr/bin/dircolors ]; then
+	test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+	alias ls='ls --color=auto'
+	#alias dir='dir --color=auto'
+	#alias vdir='vdir --color=auto'
 
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
+	alias grep='grep --color=auto'
+	alias fgrep='fgrep --color=auto'
+	alias egrep='egrep --color=auto'
+fi
 
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
@@ -64,4 +66,17 @@ export EDITOR=$VISUAL
 bindkey ';5D' emacs-backward-word
 bindkey ';5C' emacs-forward-word
 
+eval $(thefuck --alias)
 source ~/.fix_zsh_keys
+
+if [ -f /usr/share/doc/pkgfile/command-not-found.zsh ]; then
+	source /usr/share/doc/pkgfile/command-not-found.zsh
+fi
+
+GIT_PROMPT_EXECUTABLE="haskell"
+ZSH_THEME_GIT_PROMPT_CACHE="yes"
+source ~/zsh-git-prompt/zshrc.sh
+
+PROMPT='[%F{red}%*%f] %F{green}%n%f@%F{green}%M%f:%F{yellow}%1~%f%F{red}$(git_super_status)%f$ '
+
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
