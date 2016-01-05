@@ -109,4 +109,6 @@ fi
 
 xmodmap -e 'keycode 127 = Zenkaku_Hankaku'
 
-
+if [ -f /usr/share/doc/pkgfile/command-not-found.bash ]; then
+	source /usr/share/doc/pkgfile/command-not-found.bash
+fi
