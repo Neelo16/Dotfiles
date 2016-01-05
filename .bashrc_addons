@@ -17,7 +17,12 @@ else
 	GITPS1=:
 fi
 
-PS1="[\[\033[38;5;1m\]\t\[\033[38;5;15m\]] \[\033[38;5;2m\]\u\[\033[38;5;15m\]@\[\033[38;5;10m\]\h\[\033[38;5;15m\]:\[\033[38;5;11m\]\W\[\033[38;5;15m\]\[\033[38;5;1m\]\$(${GITPS1})\[\033[38;5;15m\]\$ "
+reset=$(tput sgr0)
+red=$(tput setaf 1)
+green=$(tput setaf 2)
+yellow=$(tput setaf 3)
+
+PS1="[${red}\t${reset}] ${green}\u${reset}@${green}\h${reset}:${yellow}\W${reset}${red}\$(${GITPS1})${reset}$ "
 
 # Set title to user@host:dir
 
