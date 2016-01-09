@@ -66,7 +66,11 @@ export EDITOR=$VISUAL
 bindkey ';5D' emacs-backward-word
 bindkey ';5C' emacs-forward-word
 
-eval $(thefuck --alias)
+#eval $(thefuck --alias)
+
+# the output of the above command - skipping the eval
+# makes opening a new terminal faster
+TF_ALIAS=fuck alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
 source ~/.fix_zsh_keys
 
 if [ -f /usr/share/doc/pkgfile/command-not-found.zsh ]; then
