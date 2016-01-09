@@ -96,7 +96,7 @@ set $workspace2  "2: "
 set $workspace3  "3: "
 set $workspace4  "4: "
 set $workspace5  "5: "
-set $workspace6  "6: "
+set $workspace6  "6: "
 set $workspace7  "7"
 set $workspace8  "8"
 set $workspace9  "9"
@@ -216,21 +216,8 @@ bindsym XF86AudioNext exec mpc next
 bindsym XF86AudioPrev exec mpc prev
 
 exec --no-startup-id dex -a
-exec --no-startup-id ~/.i3/wallpaper_cycler.sh
-exec --no-startup-id dropbox start
-exec --no-startup-id urxvtd --quiet --fork --opendisplay
 exec --no-startup-id compton
-
 exec --no-startup-id setxkbmap pt
-exec --no-startup-id redshift-gtk
-exec --no-startup-id exec unclutter --fork
-exec --no-startup-id shutter --min_at_startup
-exec --no-startup-id copyq
-exec --no-startup-id trackma-gtk
-exec --no-startup-id guake
-exec --no-startup-id mpd
-exec --no-startup-id mpdscribble
-exec --no-startup-id ~/bin/RinDownloader
 
 bindsym $mod+d exec rofi -show run -lines 8 -eh 2 -width 100 -padding 100 -opacity "80" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
 bindsym $mod+ctrl+l exec /home/neelo/.i3/lock.sh
