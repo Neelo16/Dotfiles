@@ -266,3 +266,6 @@ mode $sysmenu {
     bindsym Return    mode "default"
     bindsym Escape    mode "default"
 }
+
+bindsym $mod+p exec notify-send "Pausing after current song"; exec mpc current --wait && mpc pause
+
