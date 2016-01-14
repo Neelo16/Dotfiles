@@ -66,13 +66,6 @@ export EDITOR=$VISUAL
 bindkey ';5D' emacs-backward-word
 bindkey ';5C' emacs-forward-word
 
-#eval $(thefuck --alias)
-
-# the output of the above command - skipping the eval
-# makes opening a new terminal faster
-TF_ALIAS=fuck alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
-source ~/.fix_zsh_keys
-
 if [ -f /usr/share/doc/pkgfile/command-not-found.zsh ]; then
 	source /usr/share/doc/pkgfile/command-not-found.zsh
 fi
@@ -84,3 +77,5 @@ source ~/zsh-git-prompt/zshrc.sh
 PROMPT='[%F{red}%*%f] %F{green}%n%f@%F{green}%M%f:%F{yellow}%1~%f%F{red}$(git_super_status)%f$ '
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+source /usr/lib/z.sh
