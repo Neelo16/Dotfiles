@@ -268,4 +268,5 @@ mode $sysmenu {
 }
 
 bindsym $mod+p exec notify-send "Pausing after current song"; exec mpc current --wait && mpc pause
+bindsym $mod+m exec ~/.i3/toggle_touchpad
 
