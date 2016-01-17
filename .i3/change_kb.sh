@@ -9,6 +9,7 @@ fi
 
 if [[ "$CUR_ENGINE" = "$PT_ENGINE" ]]; then
 	ibus engine "$JP_ENGINE"
+	xmodmap -e 'keycode 127 = Zenkaku_Hankaku'
 else 
 	if [[ "$CUR_ENGINE" = "$JP_ENGINE" ]]; then
 		ibus engine "$PT_ENGINE"
