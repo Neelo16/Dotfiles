@@ -45,7 +45,6 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias lsg='ls | grep'
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
@@ -79,3 +78,7 @@ PROMPT='[%F{red}%*%f] %F{green}%n%f@%F{green}%M%f:%F{yellow}%1~%f%F{red}$(git_su
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 source /usr/lib/z.sh
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+export XIM_PROGRAM=/usr/bin/ibus-daemon 
