@@ -13,8 +13,8 @@ Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-surround'
+Plugin 'ervandew/supertab'
 
 " all of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -129,6 +129,7 @@ set clipboard=unnamedplus
 set backupdir=~/.vim-backup,/tmp
 set undodir=~/.vim-backup,/tmp
 set directory=~/.vim-backup,/tmp
+set wildmenu
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -143,3 +144,7 @@ let g:syntastic_cpp_compiler_options = '-std=c++11 -Wall -Wextra'
 let mapleader = ","
 map <Leader>b :NERDTree<CR>
 map <Leader>B :NERDTreeClose<CR>
+
+" Highlight lines longer than 80 characters
+match ErrorMsg '\%>80v.\+'
+
