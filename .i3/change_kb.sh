@@ -14,5 +14,7 @@ else
 	if [[ "$CUR_ENGINE" = "$JP_ENGINE" ]]; then
 		ibus engine "$PT_ENGINE"
 	fi
+else
+	ibus restart
 fi
 
