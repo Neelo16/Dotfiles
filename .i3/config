@@ -215,8 +215,9 @@ bindsym XF86AudioStop exec mpc stop
 bindsym XF86AudioNext exec mpc next
 bindsym XF86AudioPrev exec mpc prev
 
-exec --no-startup-id dex -a
+exec --no-startup-id dex -a -e i3
 exec --no-startup-id compton
+exec --no-startup-id xfce4-power-manager
 exec --no-startup-id setxkbmap pt
 
 bindsym $mod+d exec rofi -show run -lines 8 -eh 2 -width 100 -padding 100 -opacity "80" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
