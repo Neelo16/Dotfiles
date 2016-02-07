@@ -13,8 +13,8 @@ if [[ "$CUR_ENGINE" = "$PT_ENGINE" ]]; then
 else 
 	if [[ "$CUR_ENGINE" = "$JP_ENGINE" ]]; then
 		ibus engine "$PT_ENGINE"
+	else
+		ibus restart
 	fi
-else
-	ibus restart
 fi
 
