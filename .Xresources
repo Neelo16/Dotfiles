@@ -22,7 +22,8 @@ URxvt*clipboard.pastecmd: xsel -ob
 
 ! special
 *foreground:   #f8f8f2
-*background:   #272822
+*background:   #000000
+!*background:   #272822
 URxvt*background:   [80]#272822
 *cursorColor:  #f8f8f2
 !
