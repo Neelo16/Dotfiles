@@ -14,7 +14,15 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-commentary'
 Plugin 'ervandew/supertab'
+"Plugin 'davidhalter/jedi-vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+Plugin 'lervag/vimtex'
 
 " all of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -140,11 +148,17 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_cpp_compiler_options = '-std=c++11 -Wall -Wextra'
+let g:syntastic_tex_checkers = ['chktex']
+
+let g:vimtex_view_method = 'zathura'
 
 let mapleader = ","
 map <Leader>b :NERDTree<CR>
 map <Leader>B :NERDTreeClose<CR>
+map <Leader>n :noh<CR>
 
 " Highlight lines longer than 80 characters
-match ErrorMsg '\%>80v.\+'
+"match ErrorMsg '\%>80v.\+'
 
+set ts=4
+set complete+=kspell
