@@ -133,6 +133,7 @@ assign [class="mpv"] $workspace4
 assign [class="Steam"] $workspace5
 assign [class="Skype"] $workspace6
 assign [class="Transmission-gtk"] $workspace10
+assign [class="TeamSpeak 3"] $workspace6
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -218,10 +219,9 @@ bindsym XF86AudioPrev exec mpc prev
 exec --no-startup-id dex -a -e i3
 exec --no-startup-id compton
 exec --no-startup-id xfce4-power-manager
-exec --no-startup-id setxkbmap pt
+exec --no-startup-id setxkbmap pt -option caps:swapescape
 
 bindsym $mod+d exec rofi -show run -lines 8 -eh 2 -width 100 -padding 100 -opacity "80" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
-bindsym $mod+ctrl+l exec /home/neelo/.i3/lock.sh
 
 bindsym $mod+z workspace prev
 bindsym $mod+x workspace next
@@ -255,7 +255,7 @@ bindsym --release $mod+shift+n exec pkill -SIGUSR1 wallpaper_cycle
 new_window pixel
 
 # Power menu
-set $sysmenu "  [<b>r</b>]estart - [<b>l</b>]ogout - [<b>s</b>]uspend - re[<b>b</b>]oot - po[<b>w</b>]eroff  "
+set $sysmenu "  [r]estart - [l]ogout - [s]uspend - re[b]oot - po[w]eroff  "
 bindsym $mod+Shift+e      mode $sysmenu
 
 mode $sysmenu {
@@ -270,4 +270,6 @@ mode $sysmenu {
 
 bindsym $mod+p exec notify-send "Pausing after current song"; exec mpc current --wait && mpc pause
 bindsym $mod+m exec ~/.i3/toggle_touchpad
+bindsym $mod+Control+l exec ~/.i3/lock.sh
 
+# vim:filetype=i3
