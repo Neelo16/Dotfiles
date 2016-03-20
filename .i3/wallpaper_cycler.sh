@@ -19,6 +19,9 @@ do
 	fi
 	for WALLPAPER in ${FILES[@]}
 	do
+		if [ "$DESKTOP_SESSION" == "gnome" ]; then
+				gsettings set org.gnome.desktop.background picture-uri "file://$WALLPAPER"
+		fi
 		feh --bg-max "$WALLPAPER"
 		sleep $DELAY &
 		wait
