@@ -221,7 +221,8 @@ exec --no-startup-id compton
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id setxkbmap pt -option caps:swapescape
 
-bindsym $mod+d exec rofi -show run -lines 8 -eh 2 -width 100 -padding 100 -opacity "80" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
+bindsym $mod+d exec rofi -show run -lines 8 -eh 2 -width 100 -padding 200 -opacity "80" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
+bindsym $mod+Tab exec rofi -show window -lines 8 -eh 2 -width 100 -padding 200 -opacity "80" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
 
 bindsym $mod+z workspace prev
 bindsym $mod+x workspace next
