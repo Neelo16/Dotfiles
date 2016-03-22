@@ -160,5 +160,7 @@ map <Leader>n :noh<CR>
 " Highlight lines longer than 80 characters
 "match ErrorMsg '\%>80v.\+'
 
-set ts=4
 set complete+=kspell
+set expandtab
+set ts=4
+set sw=4
