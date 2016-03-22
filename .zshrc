@@ -51,7 +51,7 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 if [ -d $HOME/bin ]; then
-	export PATH=$HOME/bin:$PATH
+	export PATH=$HOME/bin:$PATH:$HOME/.gem/ruby/2.3.0/bin
 fi
 
 # Replace useless Pause Break key with Zenkaku_Hankaku
@@ -84,3 +84,4 @@ export QT_IM_MODULE=ibus
 export XIM_PROGRAM=/usr/bin/ibus-daemon 
 
 setopt histignorespace
+setopt HIST_IGNORE_ALL_DUPS
