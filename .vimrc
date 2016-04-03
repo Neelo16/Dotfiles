@@ -16,13 +16,21 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-speeddating'
 Plugin 'ervandew/supertab'
-"Plugin 'davidhalter/jedi-vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'lervag/vimtex'
+Plugin 'mattn/emmet-vim'
+Plugin 'Yggdroot/indentLine'
+Plugin 'bling/vim-airline'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'raimondi/delimitmate'
+Plugin 'mhinz/vim-startify'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-easytags'
 
 " all of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -152,10 +160,10 @@ let g:syntastic_tex_checkers = ['chktex']
 
 let g:vimtex_view_method = 'zathura'
 
-let mapleader = ","
+let mapleader = " "
 map <Leader>b :NERDTree<CR>
 map <Leader>B :NERDTreeClose<CR>
-map <Leader>n :noh<CR>
+map <Leader>n :noh<CR>:SyntasticReset<CR>
 
 " Highlight lines longer than 80 characters
 "match ErrorMsg '\%>80v.\+'
@@ -164,3 +172,8 @@ set complete+=kspell
 set expandtab
 set ts=4
 set sw=4
+
+let g:molokai_original = 1
+let g:rehash256 = 1
+
+colorscheme molokai
