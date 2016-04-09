@@ -5,10 +5,8 @@ URxvt*scrollTtyOutput: false
 URxvt*skipScroll: true
 URxvt*fading: 30
 URxvt*visualBell: false
-URxvt*font: xft:terminus-medium:pixelsize:12,\
-		xft:Kochi Gothic:antialias=false,\
-URxvt*boldFont: xft:terminus:bold:pixelsize:12,\
-		xft:kochi-gothic-bold:antialias=false
+URxvt*font: xft:terminus-medium:pixelsize:12,xft:Terminess\ Powerline:size=24,xft:Kochi Gothic:antialias=false
+URxvt*boldFont: xft:terminus:bold:pixelsize:12,xft:kochi-gothic-bold:antialias=false
 URxvt*italicFont:  xft:Bitstream Vera Sans Mono:italic:autohint=true:pixelsize=12
 URxvt*boldItalicFont:  xft:Bitstream Vera Sans Mono:bold:italic:autohint=true:pixelsize=12
 
