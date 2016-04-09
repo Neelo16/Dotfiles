@@ -188,4 +188,11 @@ let g:tex_conceal=''
 
 set t_ut=
 
+" Map Ctrl+movement keys to window movements
+map <C-h> <C-W>h
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-l> <C-W>l
+
+
 colorscheme molokai
