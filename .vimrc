@@ -165,8 +165,7 @@ let g:syntastic_tex_checkers = ['chktex']
 let g:vimtex_view_method = 'zathura'
 
 let mapleader = " "
-map <Leader>b :NERDTree<CR>
-map <Leader>B :NERDTreeClose<CR>
+map <Leader>b :NERDTreeToggle<CR>
 map <Leader>n :noh<CR>:SyntasticReset<CR>
 map <Leader>t :TagbarToggle<CR>
 
