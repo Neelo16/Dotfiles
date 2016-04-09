@@ -31,6 +31,10 @@ Plugin 'raimondi/delimitmate'
 Plugin 'mhinz/vim-startify'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'majutsushi/tagbar'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'ap/vim-css-color'
 
 " all of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -164,6 +168,7 @@ let mapleader = " "
 map <Leader>b :NERDTree<CR>
 map <Leader>B :NERDTreeClose<CR>
 map <Leader>n :noh<CR>:SyntasticReset<CR>
+map <Leader>t :TagbarToggle<CR>
 
 " Highlight lines longer than 80 characters
 "match ErrorMsg '\%>80v.\+'
@@ -173,7 +178,14 @@ set expandtab
 set ts=4
 set sw=4
 
+set laststatus=2
+let g:airline_powerline_fonts = 1
+
 let g:molokai_original = 1
 let g:rehash256 = 1
+
+let g:tex_conceal=''
+
+set t_ut=
 
 colorscheme molokai
