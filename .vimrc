@@ -35,6 +35,13 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'majutsushi/tagbar'
 Plugin 'sheerun/vim-polyglot'
 Plugin 'ap/vim-css-color'
+Plugin 'michaeljsmith/vim-indent-object'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'sjl/gundo.vim'
+
+" Colorschemes
+Plugin 'sjl/badwolf'
+Plugin 'tomasr/molokai'
 
 " all of your Plugins must be added before the following line
 call vundle#end()            " required
