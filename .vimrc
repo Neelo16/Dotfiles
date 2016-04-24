@@ -175,6 +175,7 @@ let mapleader = " "
 map <Leader>b :NERDTreeToggle<CR>
 map <Leader>n :noh<CR>:SyntasticReset<CR>
 map <Leader>t :TagbarToggle<CR>
+map <Leader>u :GundoToggle<CR>
 
 " Highlight lines longer than 80 characters
 "match ErrorMsg '\%>80v.\+'
@@ -190,6 +191,14 @@ let g:airline_powerline_fonts = 1
 let g:molokai_original = 1
 let g:rehash256 = 1
 
+" Make CtrlP appear at the top of the screen
+let g:ctrlp_match_window_bottom = 0
+let g:ctrlp_match_window_reversed = 0
+
+" Use ag to speed up CtrlP
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+" Disable automatic concealment of certain tags in TeX
 let g:tex_conceal=''
 
 set t_ut=
@@ -200,5 +209,8 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-l> <C-W>l
 
+let delimitMate_expand_cr = 1
+au FileType python let b:delimitMate_nesting_quotes = ['"']
+au FileType python let b:delimitMate_expand_inside_quotes = 1
 
 colorscheme molokai
