@@ -142,12 +142,12 @@ endif
 
 set rnu " Relative line numbers
 
-function RelNum()
+function! RelNum()
 	set nonumber
 	set rnu
 endfunction
 
-function AbsNum()
+function! AbsNum()
 	set nornu
 	set number
 endfunction
