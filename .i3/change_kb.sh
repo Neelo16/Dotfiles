@@ -18,3 +18,4 @@ else
 	fi
 fi
 
+setxkbmap -option caps:swapescape
