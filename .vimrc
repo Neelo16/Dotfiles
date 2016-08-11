@@ -200,7 +200,7 @@ let g:ctrlp_match_window_reversed = 0
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
 " Disable automatic concealment of certain tags in TeX
-let g:tex_conceal=''
+" let g:tex_conceal=''
 
 set t_ut=
 
@@ -213,6 +213,12 @@ map <C-l> <C-W>l
 let delimitMate_expand_cr = 1
 au FileType python let b:delimitMate_nesting_quotes = ['"']
 au FileType python let b:delimitMate_expand_inside_quotes = 1
+
+" Add ability to use % to jump between matching HTML tags
+runtime macros/matchit.vim
+
+" Binding to skip to the end of the next XML/HTML tag
+map gt f>
 
 let g:jedi#usages_command = "<leader>c"
 
