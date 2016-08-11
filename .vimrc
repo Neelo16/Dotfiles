@@ -39,6 +39,7 @@ Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'sjl/gundo.vim'
 
+Plugin 'davidhalter/jedi-vim'
 " Colorschemes
 Plugin 'sjl/badwolf'
 Plugin 'tomasr/molokai'
@@ -212,5 +213,7 @@ map <C-l> <C-W>l
 let delimitMate_expand_cr = 1
 au FileType python let b:delimitMate_nesting_quotes = ['"']
 au FileType python let b:delimitMate_expand_inside_quotes = 1
+
+let g:jedi#usages_command = "<leader>c"
 
 colorscheme molokai
