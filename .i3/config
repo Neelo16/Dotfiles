@@ -132,8 +132,9 @@ assign [class="Subl"] $workspace3
 assign [class="mpv"] $workspace4
 assign [class="Steam"] $workspace5
 assign [class="Skype"] $workspace6
-assign [class="Transmission-gtk"] $workspace10
 assign [class="TeamSpeak 3"] $workspace6
+assign [class="discord"] $workspace6
+assign [class="Transmission-gtk"] $workspace10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
