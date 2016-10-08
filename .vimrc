@@ -38,11 +38,17 @@ Plugin 'ap/vim-css-color'
 Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'sjl/gundo.vim'
-
+Plugin 'gregsexton/gitv'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'godlygeek/tabular'
+
 " Colorschemes
 Plugin 'sjl/badwolf'
 Plugin 'tomasr/molokai'
+Plugin 'morhetz/gruvbox'
+Plugin 'w0ng/vim-hybrid'
+Plugin 'sickill/vim-monokai'
 
 " all of your Plugins must be added before the following line
 call vundle#end()            " required
