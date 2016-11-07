@@ -265,7 +265,7 @@ mode $sysmenu {
     bindsym l         exit
     bindsym w         exec "systemctl poweroff"
     bindsym b         exec "systemctl reboot"
-    bindsym s         exec "systemctl suspend"
+    bindsym s         exec "systemctl suspend"; exec ~/.i3/lock.sh; mode "default"
     bindsym Return    mode "default"
     bindsym Escape    mode "default"
 }
