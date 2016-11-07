@@ -42,7 +42,7 @@ Plugin 'gregsexton/gitv'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'godlygeek/tabular'
-
+Plugin 'Harenome/vim-mipssyntax'
 " Colorschemes
 Plugin 'sjl/badwolf'
 Plugin 'tomasr/molokai'
