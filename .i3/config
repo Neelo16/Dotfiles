@@ -245,8 +245,8 @@ bindsym $mod+button3 floating toggle
 bindsym button9 move left
 bindsym button8 move right
 
-bindsym Print exec shutter --full
-bindsym shift+Print exec shutter -s
+bindsym Print exec shutter --full --exit_after_capture
+bindsym shift+Print exec shutter --select --exit_after_capture
 
 bindsym $mod+ctrl+space exec --no-startup-id ~/.i3/change_kb.sh
 
