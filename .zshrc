@@ -85,5 +85,8 @@ export XIM_PROGRAM=/usr/bin/ibus-daemon
 setopt histignorespace
 setopt HIST_IGNORE_ALL_DUPS
 
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+if [ -f ~/.pystartup ]; then
+    export PYTHONSTARTUP=~/.pystartup
+fi
 
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
