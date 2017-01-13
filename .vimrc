@@ -43,6 +43,7 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'godlygeek/tabular'
 Plugin 'Harenome/vim-mipssyntax'
+Plugin 'PotatoesMaster/i3-vim-syntax'
 " Colorschemes
 Plugin 'sjl/badwolf'
 Plugin 'tomasr/molokai'
