@@ -69,7 +69,7 @@ if [ -f /usr/share/doc/pkgfile/command-not-found.zsh ]; then
 	source /usr/share/doc/pkgfile/command-not-found.zsh
 fi
 
-GIT_PROMPT_EXECUTABLE="haskell"
+# GIT_PROMPT_EXECUTABLE="haskell"
 ZSH_THEME_GIT_PROMPT_CACHE="yes"
 source ~/zsh-git-prompt/zshrc.sh
 
