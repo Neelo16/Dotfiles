@@ -129,6 +129,7 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 # assign windows to their workspaces
 assign [class="Firefox"] $workspace2
 assign [class="Subl"] $workspace3
+assign [class="Eclipse"] $workspace3
 assign [class="mpv"] $workspace4
 assign [class="Steam"] $workspace5
 assign [class="Skype"] $workspace6
@@ -245,8 +246,8 @@ bindsym $mod+button3 floating toggle
 bindsym button9 move left
 bindsym button8 move right
 
-bindsym Print exec shutter --full --exit_after_capture
-bindsym shift+Print exec shutter --select --exit_after_capture
+bindsym Print exec shutter --full
+bindsym shift+Print exec shutter --select
 
 bindsym $mod+ctrl+space exec --no-startup-id ~/.i3/change_kb.sh
 
