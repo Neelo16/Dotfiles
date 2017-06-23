@@ -20,12 +20,14 @@ compinit
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=50000
+SAVEHIST=50000
 setopt appendhistory beep nomatch notify correct promptsubst
 unsetopt autocd extendedglob
 bindkey -e
 # End of lines configured by zsh-newuser-install
+
+zstyle ':completion:*' rehash true
 
 if [ -x /usr/bin/dircolors ]; then
 	test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -50,8 +52,12 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+if which ruby >/dev/null && which gem >/dev/null; then
+    export PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+fi
+
 if [ -d $HOME/bin ]; then
-	export PATH=$HOME/bin:$PATH:$HOME/.gem/ruby/2.3.0/bin
+	export PATH=$HOME/bin:$PATH
 fi
 
 # Replace useless Pause Break key with Zenkaku_Hankaku
@@ -70,12 +76,14 @@ if [ -f /usr/share/doc/pkgfile/command-not-found.zsh ]; then
 fi
 
 # GIT_PROMPT_EXECUTABLE="haskell"
-ZSH_THEME_GIT_PROMPT_CACHE="yes"
-source ~/zsh-git-prompt/zshrc.sh
+# ZSH_THEME_GIT_PROMPT_CACHE="yes"
+source /usr/lib/zsh-git-prompt/zshrc.sh
 
 PROMPT='[%F{red}%*%f] %F{green}%n%f@%F{green}%M%f:%F{yellow}%1~%f%F{red}$(git_super_status)%f$ '
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh-dwim/init.zsh
 
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
@@ -90,3 +98,9 @@ if [ -f ~/.pystartup ]; then
 fi
 
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+export CVSROOT=:ext:ist181201@sigma.ist.utl.pt:/afs/ist.utl.pt/groups/leic-co/co17/cvs/81201
+export CVS_RSH=ssh
+
+export PAGER=vimpager
+alias less=$PAGER
+alias zless=$PAGER
