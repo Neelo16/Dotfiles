@@ -135,8 +135,8 @@ assign [class="Steam"] $workspace5
 assign [class="Skype"] $workspace6
 assign [class="discord"] $workspace6
 assign [class="Caprine"] $workspace7
-assign [class="slack"] $workspace8
-assign [class="Mail"] $workspace9
+assign [class="Slack"] $workspace8
+assign [class="Thunderbird"] $workspace9
 assign [class="Transmission-gtk"] $workspace10
 
 # reload the configuration file
