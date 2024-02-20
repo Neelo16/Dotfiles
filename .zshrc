@@ -113,7 +113,28 @@ if [ -S "$SSH_AUTH_SOCK" ]; then
   export SSH_AUTH_SOCK
 fi
 
+if command -v nvimpager &> /dev/null; then
+  export PAGER=nvimpager
+  alias less=$PAGER
+  alias zless=$PAGER
+else if command -v vimpager &> /dev/null; then
+    export PAGER=vimpager
+    alias less=$PAGER
+    alias zless=$PAGER
+  fi
+fi
 
-export PAGER=vimpager
-alias less=$PAGER
-alias zless=$PAGER
+if command -v nvim &> /dev/null; then
+  alias vim=nvim
+  export VISUAL=vim
+  export EDITOR=$VISUAL
+else
+  echo "nvim not found; please install it."
+  if command -v vim &> /dev/null; then
+    export VISUAL=vim
+    export EDITOR=$VISUAL
+  else
+    echo "vim also not found; please install it."
+  fi
+fi
+
