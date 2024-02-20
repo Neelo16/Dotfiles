@@ -60,17 +60,6 @@ if [ -d $HOME/bin ]; then
 	export PATH=$HOME/bin:$PATH
 fi
 
-# Replace useless Pause Break key with Zenkaku_Hankaku
-
-xmodmap -e 'keycode 127 = Zenkaku_Hankaku'
-
-export VISUAL=vim
-export EDITOR=$VISUAL
-
-# Fix the home, end, ctrl+right and ctrl+left keys
-bindkey ';5D' emacs-backward-word
-bindkey ';5C' emacs-forward-word
-
 if [ -f /usr/share/doc/pkgfile/command-not-found.zsh ]; then
 	source /usr/share/doc/pkgfile/command-not-found.zsh
 fi
@@ -85,10 +74,6 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh-dwim/init.zsh
 
-export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-export QT_IM_MODULE=ibus
-export XIM_PROGRAM=/usr/bin/ibus-daemon 
 
 setopt histignorespace
 setopt HIST_IGNORE_ALL_DUPS
@@ -97,9 +82,6 @@ if [ -f ~/.pystartup ]; then
     export PYTHONSTARTUP=~/.pystartup
 fi
 
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-export CVSROOT=:ext:ist181201@sigma.ist.utl.pt:/afs/ist.utl.pt/groups/leic-co/co17/cvs/81201
-export CVS_RSH=ssh
 
 export PAGER=vimpager
 alias less=$PAGER
