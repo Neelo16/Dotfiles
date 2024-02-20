@@ -99,6 +99,7 @@ source_plugin zsh-autosuggestions \
 
  # Not available in package managers
 source_plugin zsh-git-prompt "$HOME/.local/share/zsh-git-prompt/zshrc.sh"
+source_plugin history-search-multiword "$HOME/.local/share/history-search-multi-word/history-search-multi-word.plugin.zsh" 
 
 setopt histignorespace
 setopt HIST_IGNORE_ALL_DUPS
