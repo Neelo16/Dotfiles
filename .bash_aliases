@@ -1,7 +1,9 @@
 alias ..='cd ..'
 alias ...='cd ../..'
-alias dog='pygmentize -g'
 alias lt='ls --color=none -tr'
 alias lsg='ls | grep -i '
 alias sl='ls'
-alias mpvnoop='mpv --script=~/.config/mpv/opt-scripts/skipchapters.lua'
+
+if command -v nvim &> /dev/null; then
+  alias vim='nvim'
+fi  
