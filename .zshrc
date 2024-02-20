@@ -68,16 +68,37 @@ if [ -f /usr/share/doc/pkgfile/command-not-found.zsh ]; then
 	source /usr/share/doc/pkgfile/command-not-found.zsh
 fi
 
-# GIT_PROMPT_EXECUTABLE="haskell"
-# ZSH_THEME_GIT_PROMPT_CACHE="yes"
-source /usr/lib/zsh-git-prompt/zshrc.sh
 
 PROMPT='[%F{red}%*%f] %F{green}%n%f@%F{green}%M%f:%F{yellow}%1~%f%F{red}$(git_super_status)%f$ '
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh-dwim/init.zsh
+function source_plugin {
+  local plugin_name=$1
+  shift 1
+  local found=false
+  for filepath in "$@"; do
+    if [[ -f $filepath ]]; then
+      source $filepath
+      found=true
+      break
+    fi
+  done
+  if ! $found; then
+    echo "$plugin_name not found; please install it."
+  fi
+}
 
+# Load zsh plugins, supporting both Arch Linux and Homebrew on macOS
+
+source_plugin zsh-syntax-highlighting \
+  "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" \
+  "/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+
+source_plugin zsh-autosuggestions \
+  "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh" \
+  "/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
+
+ # Not available in package managers
+source_plugin zsh-git-prompt "$HOME/.local/share/zsh-git-prompt/zshrc.sh"
 
 setopt histignorespace
 setopt HIST_IGNORE_ALL_DUPS
