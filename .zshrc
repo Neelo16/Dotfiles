@@ -141,3 +141,7 @@ fi
 if command -v zoxide &> /dev/null; then
   eval "$(zoxide init --cmd cd zsh)"
 fi
+
+if command -v lazygit &> /dev/null; then
+  alias lg=lazygit
+fi
