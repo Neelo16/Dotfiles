@@ -2,7 +2,8 @@
 
 This repo contains all my dotfiles. I use [GNU Stow](https://www.gnu.org/software/stow/) to manage them.
 
-To install them, clone this repo and run `stow` on the directories you want to install. For example, to install my `nvim` configuration, run:
+To install them, clone this repo to your home directory and run `stow` on the directories you want to install.
+For example, to install my `nvim` configuration, run:
 
 ```sh
 stow nvim
@@ -24,6 +25,18 @@ To uninstall all the dotfiles, you can run the following command:
 
 ```sh
 stow -D */
+```
+
+If you do not want to clone the repository to your home directory, you can clone it to a different directory and use the `-d` flag to specify the directory:
+
+```sh
+# Just nvim
+stow -d "$HOME" nvim
+stow -d "$HOME" -D nvim
+
+# All dotfiles
+stow -d "$HOME" */
+stow -d "$HOME" -D */
 ```
 
 
