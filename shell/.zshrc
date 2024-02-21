@@ -56,6 +56,10 @@ if [ -f ~/.zsh_addons ]; then
     . ~/.zsh_addons
 fi
 
+if command -v rbenv &> /dev/null; then
+  eval "$(rbenv init - zsh)"
+fi
+
 if which ruby >/dev/null && which gem >/dev/null; then
     export PATH="$(gem env user_gemdir)/bin:$PATH"
 fi
