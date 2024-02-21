@@ -112,9 +112,9 @@ if [ -f ~/.pystartup ]; then
     export PYTHONSTARTUP=~/.pystartup
 fi
 
-SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-if [ -S "$SSH_AUTH_SOCK" ]; then
-  export SSH_AUTH_SOCK
+
+if [ -S "$XDG_RUNTIME_DIR/ssh-agent.socket" ]; then
+  export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket" 
 fi
 
 if command -v nvimpager &> /dev/null; then
