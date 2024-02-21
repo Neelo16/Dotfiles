@@ -28,3 +28,5 @@ vim.opt.updatetime = 50
 vim.g.mapleader = ' '
 
 vim.opt.termguicolors = true
+
+vim.opt.colorcolumn = "80"
