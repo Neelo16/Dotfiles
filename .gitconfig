@@ -1,0 +1,4 @@
+[include]
+  path = ~/.gitauthor
+[alias]
+	history = log --oneline --graph
