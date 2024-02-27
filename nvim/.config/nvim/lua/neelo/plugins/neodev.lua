@@ -1,6 +1,14 @@
 return {
   "folke/neodev.nvim",
-  config = function()
-    require("neodev").setup({})
+  opts = {
+    library = {
+      plugins = {
+        "neotest",
+      },
+      types = true,
+    },
+  },
+  config = function(_, opts)
+    require("neodev").setup(opts)
   end
 }
