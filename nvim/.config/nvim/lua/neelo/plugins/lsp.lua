@@ -31,16 +31,7 @@ return {
 
       require("mason").setup({})
       require("mason-lspconfig").setup({
-        ensure_installed = {
-          "lua_ls",
-          "rubocop",
-          "solargraph",
-          "ruby_ls",
-          "eslint",
-          "tsserver",
-          "cssls",
-          "bashls",
-        },
+        ensure_installed = { "lua_ls" },
         handlers = {
           lsp_zero.default_setup,
         }

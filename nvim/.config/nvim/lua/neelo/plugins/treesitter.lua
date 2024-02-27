@@ -5,7 +5,7 @@ return {
     ts_update()
   end,
   opts = {
-    ensure_installed = "all",
+    ensure_installed = { "c", "lua", "vim", "vimdoc", "query" },
 
     sync_install = false,
     auto_install = true,
