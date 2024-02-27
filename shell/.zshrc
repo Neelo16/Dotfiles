@@ -103,7 +103,15 @@ source_plugin zsh-autosuggestions \
 
  # Not available in package managers
 source_plugin zsh-git-prompt "$HOME/.local/share/zsh-git-prompt/zshrc.sh"
-source_plugin history-search-multiword "$HOME/.local/share/history-search-multi-word/history-search-multi-word.plugin.zsh" 
+
+
+if command -v fzf &> /dev/null; then
+  source_plugin fzf "/usr/share/fzf/key-bindings.zsh" "$HOME/.fzf.zsh"
+  source_plugin fzf "/usr/share/fzf/completion.zsh" "$HOME/.fzf.zsh"
+  source_plugin fzf-tab-completion "/usr/share/zsh/plugins/fzf-tab-git/fzf-tab.zsh" "$HOME/.local/share/fzf-tab-completion/zsh/fzf-zsh-completion.sh"
+else
+  source_plugin history-search-multiword "$HOME/.local/share/history-search-multi-word/history-search-multi-word.plugin.zsh"
+fi
 
 setopt histignorespace
 setopt HIST_IGNORE_ALL_DUPS
