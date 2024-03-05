@@ -138,7 +138,8 @@ fi
 
 if command -v nvim &> /dev/null; then
   alias vim=nvim
-  export VISUAL=vim
+  export VISUAL=nvim
+  export DIFFPROG="nvim -d"
   export EDITOR=$VISUAL
 else
   echo "nvim not found; please install it."
