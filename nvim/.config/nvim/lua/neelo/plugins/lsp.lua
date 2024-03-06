@@ -27,6 +27,8 @@ return {
         vim.keymap.set("n", "<leader>vs", vim.lsp.buf.signature_help, opts)
 
         vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, opts)
+
+        lsp_zero.buffer_autoformat()
       end)
 
       require("mason").setup({})
