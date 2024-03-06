@@ -51,3 +51,4 @@ stow -d "$HOME" -D */
 - [mpv](https://mpv.io/) (for the `mpv` directory)
 - [mpd](https://www.musicpd.org/) (for the `mpd` directory)
 - [i3](https://i3wm.org/) (for the `i3` directory)
+- [tmux](https://github.com/tmux/tmux) (for the `tmux` directory)
