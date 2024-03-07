@@ -4,6 +4,9 @@ return {
   keys = {
     { "<leader>n", vim.cmd.NvimTreeFindFileToggle },
   },
+  opts = {
+    sync_root_with_cwd = true,
+  },
   config = function(_, opts)
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
