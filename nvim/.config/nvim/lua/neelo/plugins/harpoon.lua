@@ -12,9 +12,9 @@ return {
     local harpoon = require("harpoon")
 
     return {
-      { "<leader>ha", function() harpoon:list():append() end },
-      { "<leader>hd", function() harpoon:list():remove() end },
-      { "<leader>hv", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end },
+      { "<leader>ha", function() harpoon:list():append() end,                      desc = "Add to harpoon" },
+      { "<leader>hd", function() harpoon:list():remove() end,                      desc = "Remove from harpoon" },
+      { "<leader>hv", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, desc = "View harpoon menu" },
 
       { "<C-h>",      function() harpoon:list():select(1) end },
       { "<C-j>",      function() harpoon:list():select(2) end },

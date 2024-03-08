@@ -2,7 +2,7 @@ return {
   "nvim-tree/nvim-tree.lua",
   lazy = false,
   keys = {
-    { "<leader>n", vim.cmd.NvimTreeFindFileToggle },
+    { "<leader>n", vim.cmd.NvimTreeFindFileToggle, desc = "Toggle file tree" },
   },
   opts = {
     sync_root_with_cwd = true,

@@ -6,10 +6,10 @@ return {
   keys = function()
     local telescope = require("telescope.builtin")
     return {
-      { "<leader>pf", function() telescope.find_files() end },
-      { "<C-p>",      function() telescope.git_files() end },
-      { "<leader>ps", function() telescope.live_grep() end },
-      { "<leader>fh", function() telescope.help_tags() end },
+      { "<leader>pf", function() telescope.find_files() end, desc = "Telescope project files" },
+      { "<C-p>",      function() telescope.git_files() end,  desc = "Telescope git files" },
+      { "<leader>ps", function() telescope.live_grep() end,  desc = "Telescope live grep" },
+      { "<leader>fh", function() telescope.help_tags() end,  desc = "Telescope search help" },
     }
   end
 }
