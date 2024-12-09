@@ -1,9 +1,10 @@
 return {
   'stevearc/oil.nvim',
-  opts = {},
-  -- Optional dependencies
-  dependencies = { "echasnovski/mini.icons" },
-  -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
+  lazy = false,
+  opts = {
+    default_file_explorer = true,
+  },
+  dependencies = { "nvim-tree/nvim-web-devicons" },
   keys = {
     { '<leader>-', ':Oil<CR>', desc = "Oil" },
   },
