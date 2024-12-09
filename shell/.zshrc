@@ -104,6 +104,10 @@ source_plugin zsh-autosuggestions \
  # Not available in package managers
 source_plugin zsh-git-prompt "$HOME/.local/share/zsh-git-prompt/zshrc.sh" "/usr/lib/zsh-git-prompt/zshrc.sh"
 
+if command -v direnv &> /dev/null; then
+  eval "$(direnv hook zsh)"
+fi
+
 
 if command -v fzf &> /dev/null; then
   source_plugin fzf "/usr/share/fzf/key-bindings.zsh" "$HOME/.fzf.zsh"
