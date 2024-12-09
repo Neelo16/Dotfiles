@@ -102,7 +102,7 @@ source_plugin zsh-autosuggestions \
   "/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
  # Not available in package managers
-source_plugin zsh-git-prompt "$HOME/.local/share/zsh-git-prompt/zshrc.sh"
+source_plugin zsh-git-prompt "$HOME/.local/share/zsh-git-prompt/zshrc.sh" "/usr/lib/zsh-git-prompt/zshrc.sh"
 
 
 if command -v fzf &> /dev/null; then
