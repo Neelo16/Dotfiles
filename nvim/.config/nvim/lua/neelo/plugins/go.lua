@@ -9,6 +9,10 @@ return {
     require("go").setup()
   end,
   event = { "CmdlineEnter" },
+  keys = {
+    { "<leader>gr", ":GoRename<CR>", desc = "Rename variable" },
+    { "<leader>gi", ":GoImport<CR>", desc = "GoImports" },
+  },
   ft = { "go", 'gomod' },
   build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
 }
