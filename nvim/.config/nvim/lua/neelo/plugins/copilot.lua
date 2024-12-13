@@ -37,9 +37,15 @@ return {
             local actions = require("CopilotChat.actions")
             require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
           end,
-          desc = "Copilot project files",
+          desc = "Copilot Chat Actions",
           mode = { "n", "v" },
         },
+        {
+          "<leader>ccc",
+          ":CopilotChat<CR>",
+          desc = "Copilot Chat",
+          mode = { "n", "v" },
+        }
       }
     end,
   },
