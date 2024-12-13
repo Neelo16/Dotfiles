@@ -2,3 +2,5 @@
   path = ~/.gitauthor
 [alias]
 	history = log --oneline --graph
+[init]
+	defaultBranch = master
