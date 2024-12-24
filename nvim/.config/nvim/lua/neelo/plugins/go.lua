@@ -10,7 +10,6 @@ return {
   end,
   event = { "CmdlineEnter" },
   keys = {
-    { "<leader>gr", "<cmd>GoRename<CR>",  desc = "Rename variable" },
     { "<leader>gi", "<cmd>GoImports<CR>", desc = "GoImports" },
   },
   ft = { "go", 'gomod' },
