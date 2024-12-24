@@ -166,3 +166,8 @@ fi
 if [ -d "$HOME/.cargo/bin" ]; then
   export PATH="$HOME/.cargo/bin:$PATH"
 fi
+
+if [ -d "$HOME/go/bin" ]; then
+  export GOBIN="$HOME/go/bin"
+  export PATH="$GOBIN:$PATH"
+fi
