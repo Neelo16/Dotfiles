@@ -42,42 +42,5 @@ return {
       })
     end,
   },
-  "neovim/nvim-lspconfig",
-
-  "hrsh7th/cmp-nvim-lsp",
-  {
-    "hrsh7th/nvim-cmp",
-    config = function()
-      local cmp = require("cmp")
-
-      local cmp_select = { behavior = cmp.SelectBehavior.Select }
-
-      cmp.setup({
-        mapping = cmp.mapping.preset.insert({
-          ["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
-          ["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
-          ["<C-y>"] = cmp.mapping.confirm({ select = true }),
-          ["<C-Space>"] = cmp.mapping.complete(),
-          ["<Tab>"] = nil,
-          ["<S-Tab>"] = nil,
-        }),
-        snippet = {
-          expand = function(args)
-            require("luasnip").lsp_expand(args.body)
-          end,
-        },
-        sources = cmp.config.sources({
-          { name = "nvim_lsp" },
-          { name = "luasnip" },
-        }, {
-          { name = "buffer" },
-        })
-      })
-
-      require("luasnip.loaders.from_vscode").lazy_load()
-    end
-  },
-  "L3MON4D3/LuaSnip",
-  "rafamadriz/friendly-snippets",
-  "saadparwaiz1/cmp_luasnip",
+  "neovim/nvim-lspconfig"
 }
