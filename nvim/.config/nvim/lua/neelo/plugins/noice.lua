@@ -18,12 +18,17 @@ return {
       lsp_doc_border = false,       -- add a border to hover docs and signature help
     },
     routes = {
-      { filter = { find = "B written" }, view = "mini" }
+      {
+        view = "notify",
+        filter = { event = "msg_showmode" },
+      },
     },
+  },
+  keys = {
+    { "<leader>nd", "<Cmd>NoiceDismiss<CR>", desc = "Noice dismiss" }
   },
   dependencies = {
     "MunifTanjim/nui.nvim",
-    "rcarriga/nvim-notify",
     "hrsh7th/nvim-cmp",
   }
 }
