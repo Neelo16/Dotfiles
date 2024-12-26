@@ -2,10 +2,10 @@ return {
   "hrsh7th/nvim-cmp",
   config = function()
     local cmp = require("cmp")
+    local lspkind = require('lspkind')
 
     vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
-    require('lspkind').init {}
     cmp.setup({
       mapping = cmp.mapping.preset.insert({
         ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
@@ -26,7 +26,18 @@ return {
         { name = "luasnip" },
         { name = "buffer" },
         { name = "path" },
-      })
+      }),
+      formatting = {
+        format = lspkind.cmp_format({
+          mode = 'symbol_text',
+          maxwidth = {
+            menu = 50,
+            abbr = 50,
+          },
+          ellipsis_char = '...',
+          show_labelDetails = true,
+        })
+      },
     })
 
     cmp.setup.cmdline(':', {
