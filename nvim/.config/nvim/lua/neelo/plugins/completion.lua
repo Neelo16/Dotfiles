@@ -46,7 +46,47 @@ return {
     require("luasnip.loaders.from_vscode").lazy_load()
   end,
   dependencies = {
-    { "L3MON4D3/LuaSnip", build = "make install_jsregexp" },
+    {
+      "L3MON4D3/LuaSnip",
+      build = "make install_jsregexp",
+      config = function(_, opts)
+        local ls = require("luasnip")
+        ls.setup(opts)
+        ls.config.set_config {
+          history = false,
+          updateevents = "TextChanged,TextChangedI",
+        }
+
+        for _, ft_path in ipairs(vim.api.nvim_get_runtime_file("lua/custom/snippets/*.lua", true)) do
+          loadfile(ft_path)()
+        end
+      end,
+      keys = function()
+        local ls = require("luasnip")
+        return {
+          {
+            "<C-k>",
+            function()
+              if ls.expand_or_jumpable() then
+                return ls.expand_or_jump()
+              end
+            end,
+            mode = { "i", "s" },
+            desc = "Jump to next in snippet",
+          },
+          {
+            "<C-j>",
+            function()
+              if ls.jumpable(-1) then
+                ls.jump(-1)
+              end
+            end,
+            mode = { "i", "s" },
+            desc = "Jump to previous in snippet",
+          },
+        }
+      end
+    },
     "saadparwaiz1/cmp_luasnip",
     "rafamadriz/friendly-snippets",
     "hrsh7th/cmp-cmdline",
