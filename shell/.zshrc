@@ -171,3 +171,7 @@ if [ -d "$HOME/go/bin" ]; then
   export GOBIN="$HOME/go/bin"
   export PATH="$GOBIN:$PATH"
 fi
+
+if command -v direnv &> /dev/null; then
+  eval "$(direnv hook zsh)"
+fi
