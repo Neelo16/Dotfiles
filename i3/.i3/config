@@ -277,4 +277,4 @@ bindsym $mod+p exec notify-send "Pausing after current song"; exec mpc current -
 bindsym $mod+m exec ~/.i3/toggle_touchpad
 bindsym $mod+Control+l exec ~/.i3/lock.sh
 
-# vim:filetype=i3
+# vim:filetype=i3config
