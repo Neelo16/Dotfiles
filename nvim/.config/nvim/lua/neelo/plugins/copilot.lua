@@ -28,14 +28,15 @@ return {
       highlight_headers = false,
       separator = '---',
       error_header = '> [!ERROR] Error',
+      model = 'gpt-4o-mini',
     },
     keys = function()
       return {
         {
           "<leader>ccp",
           function()
-            local actions = require("CopilotChat.actions")
-            require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
+            local chat = require("CopilotChat")
+            chat.select_prompt()
           end,
           desc = "Copilot Chat Actions",
           mode = { "n", "v" },
