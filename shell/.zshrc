@@ -129,17 +129,6 @@ if [ -S "$XDG_RUNTIME_DIR/ssh-agent.socket" ]; then
   export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket" 
 fi
 
-if command -v nvimpager &> /dev/null; then
-  export PAGER=nvimpager
-  alias less=$PAGER
-  alias zless=$PAGER
-else if command -v vimpager &> /dev/null; then
-    export PAGER=vimpager
-    alias less=$PAGER
-    alias zless=$PAGER
-  fi
-fi
-
 if command -v nvim &> /dev/null; then
   alias vim=nvim
   export VISUAL=nvim

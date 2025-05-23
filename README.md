@@ -1,3 +1,4 @@
+Set correct modeline for0
  ## Dotfiles
 
 This repo contains all my dotfiles. I use [GNU Stow](https://www.gnu.org/software/stow/) to manage them.
@@ -45,7 +46,6 @@ stow -d "$HOME" -D */
 - [GNU Stow](https://www.gnu.org/software/stow/) (for managing the dotfiles)
 - [git](https://git-scm.com/) (for the `git` directory, and for cloning this repo in the first place)
 - [Neovim](https://neovim.io/) (for the `nvim` directory)
-- [nvimpager](https://github.com/lucc/nvimpager) (for the `nvimpager` directory)
 - [vim](https://www.vim.org/) (for the `vim` directory)
 - [Zsh](https://www.zsh.org/) (for the `shell` directory)
 - [mpv](https://mpv.io/) (for the `mpv` directory)
