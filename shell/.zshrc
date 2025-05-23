@@ -73,7 +73,7 @@ if [ -f /usr/share/doc/pkgfile/command-not-found.zsh ]; then
 fi
 
 
-PROMPT='[%F{red}%*%f] %F{green}%n%f@%F{green}%M%f:%F{yellow}%1~%f%F{red}$(git_super_status)%f$ '
+PROMPT='[%F{red}%*%f] %F{green}%n%f@%F{green}%M%f:%F{yellow}%1~%f%F{red}${vcs_info_msg_0_}%f$ '
 
 function source_plugin {
   local plugin_name=$1
@@ -101,8 +101,30 @@ source_plugin zsh-autosuggestions \
   "/usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh" \
   "/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
- # Not available in package managers
-source_plugin zsh-git-prompt "$HOME/.local/share/zsh-git-prompt/zshrc.sh" "/usr/lib/zsh-git-prompt/zshrc.sh"
+if [[ -d "$HOME/.local/share/zsh-jj/functions" ]]; then
+    fpath+="$HOME/.local/share/zsh-jj/functions"
+
+    autoload -Uz vcs_info
+    autoload -U colors && colors
+
+    zstyle ':vcs_info:*' enable jj git
+
+    precmd_vcs_info() { vcs_info }
+    precmd_functions+=( precmd_vcs_info )
+    setopt prompt_subst
+
+    zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
+    +vi-git-untracked(){
+        if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
+            git status --porcelain | grep '??' &> /dev/null ; then
+            hook_com[staged]+='!' # signify new files with a bang
+        fi
+    }
+
+    zstyle ':vcs_info:*' check-for-changes true
+    zstyle ':vcs_info:*:*' formats " %{$fg[blue]%}(%s %{$fg[red]%}%m%u%{$fg[yellow]%}%{$fg[magenta]%} %b%{$fg[blue]%})%{$reset_color%}"
+fi
+
 
 if command -v direnv &> /dev/null; then
   eval "$(direnv hook zsh)"
