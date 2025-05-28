@@ -15,12 +15,26 @@ return {
     "nvim-lua/plenary.nvim",
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
     { 'nvim-telescope/telescope-ui-select.nvim' },
+    { 'zschreur/telescope-jj.nvim' },
   },
   keys = function()
     local telescope = require("telescope.builtin")
+
+    local vcs_picker = function(opts)
+      local jj_pick_status, jj_res = pcall(require("telescope").extensions.jj.files, opts)
+      if jj_pick_status then
+        return
+      end
+
+      local git_files_status, git_res = pcall(telescope.git_files, opts)
+      if not git_files_status then
+        error("Could not launch jj/git files: \n" .. jj_res .. "\n" .. git_res)
+      end
+    end
+
     return {
       { "<leader>pf", function() telescope.find_files() end,                                  desc = "Telescope project files" },
-      { "<C-p>",      function() telescope.git_files() end,                                   desc = "Telescope git files" },
+      { "<C-p>",      vcs_picker,                                                             desc = "Telescope git files" },
       { "<leader>ps", function() telescope.live_grep() end,                                   desc = "Telescope live grep" },
       { "<leader>fh", function() telescope.help_tags() end,                                   desc = "Telescope search help" },
       { "<leader>en", function() telescope.find_files { cwd = vim.fn.stdpath("config") } end, desc = "Telescope nvim config files" },
@@ -39,5 +53,6 @@ return {
 
     telescope.load_extension('fzf')
     telescope.load_extension("ui-select")
+    telescope.load_extension("jj")
   end,
 }
