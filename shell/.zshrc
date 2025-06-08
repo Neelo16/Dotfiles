@@ -186,3 +186,9 @@ fi
 if command -v direnv &> /dev/null; then
   eval "$(direnv hook zsh)"
 fi
+
+if command -v eza &> /dev/null; then
+    alias ls='eza --icons --group-directories-first'
+fi
+
+[ -f "$HOME/.local/scripts/tmux-sessionizer" ] && bindkey -s ^f " $HOME/.local/scripts/tmux-sessionizer\n"
