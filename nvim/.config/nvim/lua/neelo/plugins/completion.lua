@@ -12,7 +12,7 @@ return {
       documentation = { auto_show = true },
     },
     sources = {
-      default = { 'lsp', 'path', 'snippets', 'buffer' },
+      default = { 'copilot', 'lsp', 'path', 'snippets', 'buffer' },
       per_filetype = {
         sql = { 'snippets', 'dadbod', 'buffer' },
         lua = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer' },
@@ -24,6 +24,12 @@ return {
           module = "lazydev.integrations.blink",
           score_offset = 100,
         },
+        copilot = {
+          name = "copilot",
+          module = "blink-copilot",
+          score_offset = 100,
+          async = true,
+        }
       },
     },
     fuzzy = { implementation = "prefer_rust_with_warning" },
@@ -33,5 +39,6 @@ return {
     "rafamadriz/friendly-snippets",
     { "folke/lazydev.nvim",                   ft = { 'lua' },                   lazy = true },
     { 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }, lazy = true },
+    { "fang2hou/blink-copilot" },
   },
 }

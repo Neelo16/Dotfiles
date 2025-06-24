@@ -1,13 +1,26 @@
 return {
-  'github/copilot.vim',
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    opts = {
+      suggestion = { enabled = true, auto_trigger = true },
+      panel = { enabled = false },
+      filetypes = {
+        yaml = true,
+        markdown = true,
+        help = true,
+      },
+    },
+  },
   {
     "CopilotC-Nvim/CopilotChat.nvim",
     dependencies = {
       { "nvim-telescope/telescope.nvim" },
-      { "github/copilot.vim" },                              -- or zbirenbaum/copilot.lua
-      { "nvim-lua/plenary.nvim",        branch = "master" }, -- for curl, log and async functions
+      { "zbirenbaum/copilot.lua" },
+      { "nvim-lua/plenary.nvim",        branch = "master" },
     },
-    build = "make tiktoken",                                 -- Only on MacOS or Linux
+    build = "make tiktoken",
     cmd = {
       "CopilotChat",
       "CopilotChatOpen",
