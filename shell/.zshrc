@@ -174,6 +174,10 @@ if command -v lazygit &> /dev/null; then
   alias lg=lazygit
 fi
 
+if command -v lazyjj &> /dev/null; then
+  alias lj=lazyjj
+fi
+
 if [ -d "$HOME/.cargo/bin" ]; then
   export PATH="$HOME/.cargo/bin:$PATH"
 fi
