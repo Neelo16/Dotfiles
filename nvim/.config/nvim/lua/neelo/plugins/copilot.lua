@@ -4,7 +4,7 @@ return {
     cmd = "Copilot",
     event = "InsertEnter",
     opts = {
-      suggestion = { enabled = true, auto_trigger = true },
+      suggestion = { enabled = false },
       panel = { enabled = false },
       filetypes = {
         yaml = true,
@@ -41,7 +41,7 @@ return {
       highlight_headers = false,
       separator = '---',
       error_header = '> [!ERROR] Error',
-      model = 'gpt-4o-mini',
+      model = 'gpt-4o',
     },
     keys = function()
       return {
