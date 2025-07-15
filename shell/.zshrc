@@ -196,3 +196,8 @@ if command -v eza &> /dev/null; then
 fi
 
 [ -f "$HOME/.local/scripts/tmux-sessionizer" ] && bindkey -s ^f " $HOME/.local/scripts/tmux-sessionizer\n"
+
+if command -v starship &> /dev/null; then
+    export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
+    eval "$(starship init zsh)"
+fi
