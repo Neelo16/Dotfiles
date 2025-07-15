@@ -8,17 +8,13 @@ $username\
 $hostname\
 $directory\
 ${custom.jj}\
-${custom.git_branch}
+${custom.git_branch}\
+${custom.git_commit}\
+${custom.git_status}\
 $character\
 """
 right_format = """
-$direnv\
-$aws\
-$package\
-$golang\
-$lua\
-$java\
-$gradle\
+$all\
 $cmd_duration
 """
 continuation_prompt = "[∙](bright-black) "
@@ -423,14 +419,14 @@ truncation_symbol = "…"
 only_attached = false
 always_show_remote = false
 ignore_branches = []
-disabled = false
+disabled = true
 
 [git_commit]
 commit_hash_length = 7
 format = '[\($hash$tag\)]($style) '
 style = "green bold"
 only_detached = true
-disabled = false
+disabled = true
 tag_symbol = " 🏷  "
 tag_disabled = true
 tag_max_candidates = 0
@@ -471,7 +467,7 @@ staged = "+"
 untracked = "?"
 typechanged = ""
 ignore_submodules = false
-disabled = false
+disabled = true
 use_git_executable = false
 
 [gleam]
@@ -1000,10 +996,10 @@ python_binary = [
     ["python3"],
     ["python2"],
 ]
-format = 'via [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
 version_format = "v${raw}"
-style = "yellow bold"
-symbol = "🐍 "
+style = "blue bold"
+symbol = " "
 disabled = false
 detect_extensions = [
     "py",
@@ -1297,18 +1293,12 @@ jj log --revisions @ --no-graph --ignore-working-copy --color always --limit 1 -
   separate(" ",
     change_id.shortest(4),
     bookmarks,
-    "|",
     concat(
       if(conflict, "💥"),
       if(divergent, "🚧"),
       if(hidden, "👻"),
       if(immutable, "🔒"),
     ),
-    raw_escape_sequence("\x1b[1;32m") ++ if(empty, "(empty)"),
-    raw_escape_sequence("\x1b[1;32m") ++ coalesce(
-      truncate_end(29, description.first_line(), "…"),
-      "(no description set)",
-    ) ++ raw_escape_sequence("\x1b[0m"),
   )
 '
 '''
@@ -1318,3 +1308,13 @@ jj log --revisions @ --no-graph --ignore-working-copy --color always --limit 1 -
 detect_folders = [".git"]
 command = "jj root --ignore-working-copy >/dev/null 2>&1 || starship module git_branch"
 description = "Only show git_branch if we're not in a jj repo"
+
+[custom.git_commit]
+detect_folders = [".git"]
+command = "jj root --ignore-working-copy >/dev/null 2>&1 || starship module git_commit"
+description = "Only show git_commit if we're not in a jj repo"
+
+[custom.git_status]
+detect_folders = [".git"]
+command = "jj root --ignore-working-copy >/dev/null 2>&1 || starship module git_status"
+description = "Only show git_status if we're not in a jj repo"
