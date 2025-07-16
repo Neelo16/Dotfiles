@@ -901,8 +901,8 @@ Void = "  "
 Windows = "🪟 "
 
 [package]
-format = "is [$symbol$version]($style) "
-symbol = "📦 "
+format = "[$symbol$version]($style) "
+symbol = "󰏗 "
 style = "208 bold"
 display_private = false
 disabled = false
@@ -1090,9 +1090,9 @@ detect_variables = [
 ]
 
 [rust]
-format = "via [$symbol($version )]($style)"
+format = "[$symbol($version )]($style)"
 version_format = "v${raw}"
-symbol = "🦀 "
+symbol = "󱘗 "
 style = "bold red"
 disabled = false
 detect_extensions = ["rs"]
