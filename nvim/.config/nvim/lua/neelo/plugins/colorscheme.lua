@@ -13,5 +13,8 @@ return {
       require('kanagawa').setup(opts)
       vim.cmd.colorscheme('kanagawa')
     end,
+    opts = {
+      transparent = true,
+    }
   },
 }
