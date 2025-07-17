@@ -37,6 +37,8 @@ return {
       { "<C-p>",      vcs_picker,                                                             desc = "Telescope git files" },
       { "<leader>ps", function() telescope.live_grep() end,                                   desc = "Telescope live grep" },
       { "<leader>fh", function() telescope.help_tags() end,                                   desc = "Telescope search help" },
+      { "<leader>fb", function() telescope.buffers() end,                                     desc = "Telescope search buffers" },
+      { "<leader>fd", function() telescope.diagnostics() end,                                 desc = "Telescope search diagnostics" },
       { "<leader>en", function() telescope.find_files { cwd = vim.fn.stdpath("config") } end, desc = "Telescope nvim config files" },
       {
         "<leader>er",
