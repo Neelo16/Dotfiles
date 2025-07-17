@@ -45,7 +45,7 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 
 # some more ls aliases
 alias ll='ls -alF'
-alias la='ls -A'
+alias la='ls -AA'
 alias l='ls -CF'
 
 if [ -f ~/.bash_aliases ]; then
