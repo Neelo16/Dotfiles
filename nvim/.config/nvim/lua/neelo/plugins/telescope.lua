@@ -33,13 +33,16 @@ return {
     end
 
     return {
-      { "<leader>pf", function() telescope.find_files() end,                                  desc = "Telescope project files" },
-      { "<C-p>",      vcs_picker,                                                             desc = "Telescope git files" },
-      { "<leader>ps", function() telescope.live_grep() end,                                   desc = "Telescope live grep" },
-      { "<leader>fh", function() telescope.help_tags() end,                                   desc = "Telescope search help" },
-      { "<leader>fb", function() telescope.buffers() end,                                     desc = "Telescope search buffers" },
-      { "<leader>fd", function() telescope.diagnostics() end,                                 desc = "Telescope search diagnostics" },
-      { "<leader>en", function() telescope.find_files { cwd = vim.fn.stdpath("config") } end, desc = "Telescope nvim config files" },
+      { "<leader>pf",  function() telescope.find_files() end,                                  desc = "Telescope project files" },
+      { "<C-p>",       vcs_picker,                                                             desc = "Telescope git files" },
+      { "<leader>ps",  function() telescope.live_grep() end,                                   desc = "Telescope live grep" },
+      { "<leader>fh",  function() telescope.help_tags() end,                                   desc = "Telescope search help" },
+      { "<leader>fb",  function() telescope.buffers() end,                                     desc = "Telescope search buffers" },
+      { "<leader>fdd", function() telescope.diagnostics({ bufnr = 0 }) end,                    desc = "Telescope search document diagnostics" },
+      { "<leader>fds", function() telescope.lsp_document_symbols() end,                        desc = "Telescope search document symbols" },
+      { "<leader>fwd", function() telescope.diagnostics() end,                                 desc = "Telescope search workspace diagnostics" },
+      { "<leader>fws", function() telescope.lsp_dynamic_workspace_symbols() end,               desc = "Telescope search workspace symbols" },
+      { "<leader>en",  function() telescope.find_files { cwd = vim.fn.stdpath("config") } end, desc = "Telescope nvim config files" },
       {
         "<leader>er",
         function()
