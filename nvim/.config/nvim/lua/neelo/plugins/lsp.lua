@@ -20,8 +20,8 @@ return {
         vim.keymap.set("n", "K", vim.lsp.buf.hover, opts("Documentation"))
 
         vim.keymap.set("n", "<leader>vws", vim.lsp.buf.workspace_symbol, opts("Workspace symbols"))
-        vim.keymap.set("n", "<leader>vds", vim.lsp.buf.document_symbol, opts("Workspace symbols"))
-        vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float, opts("Diagnostics"))
+        vim.keymap.set("n", "<leader>vds", vim.lsp.buf.document_symbol, opts("Document symbols"))
+        vim.keymap.set("n", "<leader>vdd", vim.diagnostic.open_float, opts("Diagnostics"))
         vim.keymap.set("n", "[d", function()
             vim.diagnostic.jump({ diagnostic = vim.diagnostic.get_prev() })
           end,
