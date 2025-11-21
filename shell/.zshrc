@@ -195,10 +195,6 @@ if command -v eza &> /dev/null; then
     alias ls='eza --icons --group-directories-first'
 fi
 
-if command -v bat &> /dev/null; then
-    alias cat='bat --paging=never'
-fi
-
 [ -f "$HOME/.local/scripts/tmux-sessionizer" ] && bindkey -s ^f " $HOME/.local/scripts/tmux-sessionizer\n"
 
 if command -v starship &> /dev/null; then
