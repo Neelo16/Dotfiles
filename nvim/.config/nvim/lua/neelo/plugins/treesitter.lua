@@ -4,6 +4,7 @@ return {
     local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
     ts_update()
   end,
+  branch = "main",
   opts = {
     ensure_installed = { "c", "lua", "vim", "vimdoc", "query" },
 
