@@ -4,7 +4,6 @@ return {
   {
     "VonHeikemen/lsp-zero.nvim",
     branch = "v3.x",
-    requirements = { "nvim-telescope/telescope.nvim" },
     config = function()
       local lsp_zero = require("lsp-zero")
       lsp_zero.extend_lspconfig()
@@ -16,7 +15,6 @@ return {
 
         vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts("Definition"))
         vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts("Implementation"))
-        vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references, opts("References"))
         vim.keymap.set("n", "K", vim.lsp.buf.hover, opts("Documentation"))
 
         vim.keymap.set("n", "<leader>vws", vim.lsp.buf.workspace_symbol, opts("Workspace symbols"))

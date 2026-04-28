@@ -12,6 +12,7 @@ return {
     gitbrowser = { enabled = true },
     input = { enabled = true },
     notifier = { enabled = true },
+    picker = { enabled = true },
     quickfile = { enabled = true },
     scope = { enabled = true },
     toggle = { enabled = true },
@@ -19,6 +20,16 @@ return {
     words = { enabled = true },
   },
   keys = {
-    { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
+    { "<leader>gg",  function() Snacks.lazygit() end,                                       desc = "Lazygit" },
+    { "<leader>pf",  function() Snacks.picker.files() end,                                  desc = "Snacks.Picker project files" },
+    { "<C-p>",       function() Snacks.picker.git_files() end,                              desc = "Snacks.Picker git files" },
+    { "<leader>ps",  function() Snacks.picker.grep() end,                                   desc = "Snacks.Picker live grep" },
+    { "<leader>fh",  function() Snacks.picker.help() end,                                   desc = "Snacks.Picker search help" },
+    { "<leader>fb",  function() Snacks.picker.buffers() end,                                desc = "Snacks.Picker search buffers" },
+    { "<leader>fdd", function() Snacks.picker.diagnostics({ bufnr = 0 }) end,               desc = "Snacks.Picker search document diagnostics" },
+    { "<leader>fds", function() Snacks.picker.lsp_symbols() end,                            desc = "Snacks.Picker search document symbols" },
+    { "<leader>fwd", function() Snacks.picker.diagnostics() end,                            desc = "Snacks.Picker search workspace diagnostics" },
+    { "<leader>fws", function() Snacks.picker.lsp_workspace_symbols() end,                  desc = "Snacks.Picker search workspace symbols" },
+    { "<leader>en",  function() Snacks.picker.files { cwd = vim.fn.stdpath("config") } end, desc = "Snacks.Picker nvim config files" },
   }
 }
